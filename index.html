@@ -11,11 +11,11 @@
     <body class="bg-gray-500">
 
         <nav class="grid grid-cols-2">
-            <h1 class="col-start-1 pt-5 underline text-3xl text-blue-900 text-center mb-8">All Users</h1>
-            <a href="./addUser.html"><button class="w-24 h-10 mr-10 float-right bg-blue-900 rounded-xl ml-20 mt-6 hover:bg-white"><p class="text-sm font-light text-white hover:text-blue-900">Add User</p></button></a>
+            <h1 class="col-start-1 pt-5 underline text-3xl text-blue-900 text-center mb-8 md:mr-32 md:text-4xl">All Users</h1>
+            <a href="./addUser.html"><button class="md:invisible w-24 h-10 mr-10 float-right bg-blue-900 rounded-xl ml-20 mt-6 hover:bg-white"><p class="text-sm font-light text-white hover:text-blue-900">Add User</p></button></a>
         </nav>
 
-        <table class="ml-5 border-2 font-light pl-5" id="user_table">
+        <table class="ml-2 border-2 font-light pl-5" id="user_table">
             <tr class="border-2">
                 <th class="border-2 h-8 w-32">First Name </th>
                 <th class="border-2 w-32"> Last Name </th>
@@ -23,6 +23,10 @@
                 <th class="border-2 w-32"> Position </th>
             </tr>
         </table> 
+
+        <a href="./addUser.html"><button class="md:w-24 md:h-10 md:bg-blue-900 md:rounded-xl md:ml-2 md:mt-6 md:hover:bg-white"><p class="invisible md:visible md:text-sm md:font-light md:text-white md:hover:text-blue-900">Add User</p></button></a>
+
+
 
         <script> 
 
