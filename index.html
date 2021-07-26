@@ -3,20 +3,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Users</title>
     </head>
 
     <body class="bg-gray-500">
 
         <nav class="grid grid-cols-2">
-            <h1 class="pl-10 pt-5 underline text-3xl text-blue-900">All Users</h1>
-            <a href="./addUser.html"><button class="w-40 h-12 mr-10 float-right bg-blue-900 rounded-xl ml-20 mt-6 hover:bg-white"><p class="text-lg font-light text-white hover:text-blue-900">Add User</p></button></a>
+            <h1 class="col-start-1 pt-5 underline text-3xl text-blue-900 text-center mb-8">All Users</h1>
+            <a href="./addUser.html"><button class="w-24 h-10 mr-10 float-right bg-blue-900 rounded-xl ml-20 mt-6 hover:bg-white"><p class="text-sm font-light text-white hover:text-blue-900">Add User</p></button></a>
         </nav>
 
-        <div class="users pl-10 mt-5 ml-10 mr-10 pt-5 rounded-xl bg-white">
+        <table class="ml-5 border-2 font-light pl-5" id="user_table">
+            <tr class="border-2">
+                <th class="border-2 h-8 w-32">First Name </th>
+                <th class="border-2 w-32"> Last Name </th>
+                <th class="border-2 w-32"> Username </th>
+                <th class="border-2 w-32"> Position </th>
+            </tr>
+        </table> 
 
-        </div>
+        <script> 
 
-        <script src="./js/index.js"></script>
+            $(document).ready(function() {
+                $.getJSON('./data/db.json', function(data) { 
+                    var user_data = '';
+                    $.each(data, function(key,value){
+                        $.each(value, function(index, user){
+                            user_data += '<tr>';
+                            user_data += '<td>' + user.firstname + '</td>';
+                            user_data += '<td>' + user.lastname + '</td>';
+                            user_data += '<td>' + user.username + '</td>';
+                            user_data += '<td>' + user.position + '</td>';
+                            user_data += '</tr>';
+                        })
+                    });
+                    $('#user_table').append(user_data);   
+                });
+            });
+        
+        </script>
+
     </body>
 </html>
+
