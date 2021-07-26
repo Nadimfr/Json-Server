@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "firstname": "Nadim",
+            "lastname" : "Farah",
+            "username" : "Nadimfr",
+            "position" : "Frontend Developer"
+        },
+        {
+            "firstname": "Abc",
+            "lastname" : "Xyz",
+            "username" : "Abc_1",
+            "position" : "Manager"
+        },
+        {
+            "firstname": "Mno",
+            "lastname" : "Efg",
+            "username" : "Efg_mno",
+            "position" : "Backend Developer"
+        },
+        {
+            "firstname": "Qwerty",
+            "lastname" : "Asdfg",
+            "username" : "Unknown-001",
+            "position" : "Hr"
+        }
+    ]
+}
