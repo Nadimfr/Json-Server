@@ -9,34 +9,64 @@
     
     <body class="bg-gray-500">
 
-        <h1 class="pl-10 pt-5 mb-5 text-3xl font-light text-center">Add a new user</h1>
+        <h1 class="underline pt-8 mb-8 text-3xl font-light text-center">Add a new user</h1>
         
         
         <div class="grid grid-cols-6 gap-3">
 
-            <div class="ml-10 mr-5 w-auto h-24 bg-white rounded-xl col-span-6">
+            <div class="ml-10 mr-10 mr-5 w-auto h-24 bg-gray-400 rounded-xl col-span-6">
                 <h2 class="ml-5 mt-2 font-light text-lg">First Name</h2>
-                <input type="text" class="border-2 ml-5 mt-1 h-10 w-auto">
+                <input type="text" id="firstname" class="border-2 font-light bg-gray-400 ml-5 mt-1 h-10 w-auto">
             </div>
-            <div class="ml-10 mr-5 w-auto h-24 bg-white rounded-xl col-span-6">
+            <div class="ml-10 mr-10 w-auto h-24 bg-gray-400 rounded-xl col-span-6">
                 <h2 class="ml-5 mt-2 font-light text-lg">Last Name</h2>
-                <input type="text" id="firstname" class="border-2 ml-5 mt-1 h-10 w-auto">
+                <input type="text" id="lastname" class="border-2 font-light bg-gray-400 ml-5 mt-1 h-10 w-auto">
             </div>
-            <div class="ml-10 mr-5 w-auto h-24 bg-white rounded-xl col-span-6">
+            <div class="ml-10 mr-10 w-auto h-24 bg-gray-400 rounded-xl col-span-6">
                 <h2 class="ml-5 mt-2 font-light text-lg">Username</h2>
-                <input type="text" class="border-2 ml-5 mt-1 h-10 w-auto">
+                <input type="text" id="username"  class="border-2 font-light bg-gray-400 ml-5 mt-1 h-10 w-auto">
             </div>
-            <div class="ml-10 mr-5 w-auto h-24 bg-white rounded-xl col-span-6">
+            <div class="ml-10 mr-10 w-auto h-24 bg-gray-400 rounded-xl col-span-6">
                 <h2 class="ml-5 mt-2 font-light text-lg">Position</h2>
-                <input type="text" class="border-2 ml-5 mt-1 h-10 w-auto">
+                <input type="text" id="position"  class="border-2 font-light bg-gray-400 ml-5 mt-1 h-10 w-auto">
             </div>
             <a href="./index.html" class=" col-start-1 pl-10 text-xl text-blue-900 hover:text-white">Back</a>
-            <button class="add col-start-6 mr-8 text-xl text-blue-900 hover:text-white" id="button">Add</button>
+            <button class="col-start-5 ml-8 text-xl text-blue-900 hover:text-white" onclick="saveFile()" id="button">Add</button>
 
         </div>
-    
-      <script>
 
-      </script>
+        <p class="pt-5 pl-10 text-xl font-light text-blue-900"></p>
+    
+    <script>
+
+let saveFile = () => {
+    	const fn = document.getElementById('firstname');
+        const ln = document.getElementById('lastname');
+        const un = document.getElementById('username');
+        const pos = document.getElementById('position');
+        
+        let data = {
+            firstname: fn.value,
+            lastname: ln.value,
+            username: un.value,
+            position: pos.value
+        };
+
+        $.post({
+            type: "POST",
+            url: 'http://localhost:3000',
+            data: data,
+            success: function (data, txt){
+                console.log("ok")
+            },
+            error: function(){
+                alert("User not created!");
+            }
+        });
+    }
+    	
+    </script>
+
     </body>
+
 </html>

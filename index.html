@@ -11,16 +11,16 @@
     <body class="bg-gray-500">
 
         <nav class="grid grid-cols-2">
-            <h1 class="col-start-1 pt-5 underline text-3xl text-blue-900 text-center mb-8 md:mr-32 md:text-4xl">All Users</h1>
-            <a href="./addUser.html"><button class="md:invisible w-24 h-10 mr-10 float-right bg-blue-900 rounded-xl ml-20 mt-6 hover:bg-white"><p class="text-sm font-light text-white hover:text-blue-900">Add User</p></button></a>
+            <h1 class="font-mono pr-10 pt-6 underline text-2xl text-blue-900 ML-2 text-center mb-5 md:mr-32 md:text-4xl sm:mr-8">ALL USERS</h1>
+            <a href="./addUser.html"><button class="md:invisible w-24 h-8 mr-2 float-right bg-blue-900 rounded-xl ml-20 mt-6 hover:bg-white sm:mr-6"><p class="text-sm font-light text-white hover:text-blue-900">Add User</p></button></a>
         </nav>
 
-        <table class="ml-2 border-2 font-light pl-5" id="user_table">
+        <table class=" border-2 font-light mt-2 pl-5 bg-gray-400 ml-2 mr-2 sm:ml-8 md:ml-5" id="user_table">
             <tr class="border-2">
-                <th class="border-2 h-8 w-32">First Name </th>
-                <th class="border-2 w-32"> Last Name </th>
-                <th class="border-2 w-32"> Username </th>
-                <th class="border-2 w-32"> Position </th>
+                <th class="border-2 h-8 w-32 bg-white ">First Name </th>
+                <th class="border-2 w-24 bg-white "> Last Name </th>
+                <th class="border-2 w-32 bg-white sm:w-32"> Username </th>
+                <th class="border-2 w-36 bg-white sm:w-64"> Position </th>
             </tr>
         </table> 
 
@@ -43,6 +43,7 @@
                             user_data += '</tr>';
                         })
                     });
+
                     $('#user_table').append(user_data);   
                 });
             });

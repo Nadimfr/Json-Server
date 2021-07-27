@@ -23,6 +23,36 @@
             "lastname" : "Asdfg",
             "username" : "Unknown-001",
             "position" : "Hr"
+        },
+        {
+            "firstname": "John",
+            "lastname" : "Smith",
+            "username" : "Smith10",
+            "position" : "Graphic Desginer"
+        },
+        {
+            "firstname": "Fdf",
+            "lastname" : "Xknd",
+            "username" : "MMMe",
+            "position" : "Accounting"
+        },
+        {
+            "firstname": "Mkow",
+            "lastname" : "Lakw",
+            "username" : "Lakw",
+            "position" : "Fullstack"
+        },
+        {
+            "firstname": "Anpe",
+            "lastname" : "Aplen",
+            "username" : "APlen1",
+            "position" : "Marketing"
+        },
+        {
+            "firstname": "Pamwa",
+            "lastname" : "Slijn",
+            "username" : "Slijn__",
+            "position" : "Graphic Desginer"
         }
     ]
 }
